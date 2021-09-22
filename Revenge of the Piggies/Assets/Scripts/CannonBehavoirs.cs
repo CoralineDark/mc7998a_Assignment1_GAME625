@@ -11,6 +11,7 @@ public class CannonBehavoirs : MonoBehaviour
     public Transform piggieReload; 
     public Camera camera;
     public GameObject piggiePrefab; 
+    public GameObject piggieParent; 
   
     void Start()
     {
@@ -20,7 +21,9 @@ public class CannonBehavoirs : MonoBehaviour
     }
     void Update()
     {
-
+        //if (piggie == null) {
+        //    spawnNewPiggie(); 
+        //}
         Vector3 pointInWorld = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -camera.transform.position.z);
         Vector3 mouseInWorld = camera.ScreenToWorldPoint(pointInWorld); 
         Vector3 temp = mouseInWorld - transform.position; 
@@ -33,4 +36,13 @@ public class CannonBehavoirs : MonoBehaviour
             piggie.AddForce(100*dirAndMag); 
         }
     }
+
+    public void resetLauncher() {
+        piggieLaunched = false; 
+    }
+    /*public void spawnNewPiggie() { 
+        GameObject newPiggie = Instantiate(piggiePrefab, piggieReload.transform.position, piggie.transform.rotation, piggieParent.transform);  
+        newPiggie.tag = "Player";
+        piggie = newPiggie.GetComponent<Rigidbody2D>(); 
+    }*/
 }

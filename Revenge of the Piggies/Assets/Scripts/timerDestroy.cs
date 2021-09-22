@@ -5,7 +5,8 @@ using UnityEngine;
 public class timerDestroy : MonoBehaviour
 {
     float interval = 5; 
-    bool piggieLaunched; 
+    bool piggieLaunched;
+    public Transform piggieReload;  
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,12 @@ public class timerDestroy : MonoBehaviour
     }
 
     void killPiggie() { 
-        Destroy (gameObject, interval); 
+        transform.position = piggieReload.position;
+        //transform.rotation = piggieReload.rotation; 
+        GameObject.Find("Cannon").GetComponent<CannonBehavoirs>().resetLauncher(); 
+        interval = 5;
+        this.GetComponent<Rigidbody2D>().velocity = Vector2.zero; 
+        transform.parent = GameObject.Find("Cannon_Sprite").transform; 
+        GameObject.Find("Cannon").GetComponent<CannonBehavoirs>().piggie.gravityScale = 0; 
     }
 }
