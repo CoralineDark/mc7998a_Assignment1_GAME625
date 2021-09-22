@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5558650518428427880}
   - component: {fileID: 7411486767036684401}
   - component: {fileID: 695931829166592500}
+  - component: {fileID: -8999100363527806716}
   m_Layer: 0
   m_Name: corner
   m_TagString: Untagged
@@ -140,3 +141,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8999100363527806716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031703402033168137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dc16cf34d6d9e14e91704d9ea3006e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
