@@ -9,12 +9,16 @@ public class ScoreScript : MonoBehaviour
     private Text score; 
     void Start()
     {
-        score = GetComponent<Text>(); 
+        score = GetComponent<Text>();
+        scoreValue = 0; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        score.text = "Score: " + scoreValue;
+        score.text = "Score: " + scoreValue + "/5";
+        if (scoreValue == 5) {
+            score.text = "You Won!"; 
+        }
     }
 }

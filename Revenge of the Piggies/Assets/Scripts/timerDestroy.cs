@@ -26,12 +26,8 @@ public class timerDestroy : MonoBehaviour
     }
 
     void killPiggie() { 
-        transform.position = piggieReload.position;
-        //transform.rotation = piggieReload.rotation; 
-        GameObject.Find("Cannon").GetComponent<CannonBehavoirs>().resetLauncher(); 
+        GameObject.Find("Cannon").GetComponent<CannonBehavoirs>().spawnNewPiggie(); 
         interval = 5;
-        this.GetComponent<Rigidbody2D>().velocity = Vector2.zero; 
-        transform.parent = GameObject.Find("Cannon_Sprite").transform; 
-        GameObject.Find("Cannon").GetComponent<CannonBehavoirs>().piggie.gravityScale = 0; 
+        Destroy(gameObject);
     }
 }
